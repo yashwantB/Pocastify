@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #1DB954;
+    --bg-color: #121212;
+    --sidebar-color: #000000;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --card-color: #181818;
+    --hover-color: #282828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    padding: 24px;
+    grid-row: 1 / -1;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.nav-links li {
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-links a i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.nav-links .active a,
+.nav-links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+    padding: 24px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #404040, var(--bg-color));
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    padding: 4px 12px 4px 4px;
+    border-radius: 23px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.profile-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.profile-photo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    font-size: 14px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #121212;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 8px;
+    padding: 16px;
+    overflow: hidden;
+    height: 180px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.02);
+}
+
+.library-filters {
+    display: flex;
+    gap: 16px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.now-playing {
+    grid-column: 2 / -1;
+    background: var(--card-color);
+    border-top: 1px solid #282828;
+    padding: 16px 24px;
+}
+
+.current-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .now-playing {
+        grid-column: 1 / -1;
+    }
+
+    .library-filters {
+        display: none;
+    }
+}
+
+.progress-bar {
+    position: relative;
+    height: 4px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: height 0.2s ease;
+}
+
+.progress-bar:hover {
+    height: 6px;
+}
+
+.progress-hover {
+    position: absolute;
+    height: 100%;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress-handle,
+.progress-bar:hover .progress-hover {
+    opacity: 1;
+}
+
+.volume-slider {
+    position: relative;
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: width 0.2s ease;
+}
+
+.volume-progress {
+    position: absolute;
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+}
+
+.volume-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.volume-slider:hover .volume-handle {
+    opacity: 1;
+}
+
+.profile-menu {
+    position: fixed;
+    background: #282828;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 8px 0;
+}
+
+.profile-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.profile-menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-menu li a i {
+    margin-right: 12px;
+    width: 16px;
+}
+
+.profile-menu hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+@keyframes likeAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.like-btn.active {
+    animation: likeAnimation 0.3s ease-in-out;
+}

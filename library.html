@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Library - Podcastify</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-podcast"></i>
+                <h2>Podcastify</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                <li class="active"><a href="library.html"><i class="fas fa-bookmark"></i> Your Library</a></li>
+            </ul>
+
+            <div class="playlists-section">
+            </div>
+        </nav>
+
+        <main class="content">
+            <header>
+                <div class="header-controls">
+                    <div class="nav-buttons">
+                        <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="library-filters">
+                        <button class="filter-btn active">Playlists</button>
+                        <button class="filter-btn">Podcasts</button>
+                        <button class="filter-btn">Downloaded</button>
+                    </div>
+                    <div class="user-menu">
+                        <button class="profile-btn">
+                            <div class="profile-photo">
+                                <img src="https://picsum.photos/100" alt="Profile">
+                            </div>
+                            <span>Username</span>
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="library-content">
+                <div class="library-header">
+                    <div class="sort-controls">
+                        <button class="sort-btn">
+                            <i class="fas fa-sort-amount-down"></i>
+                            Recently Added
+                        </button>
+                    </div>
+                    <div class="view-controls">
+                        <button class="view-btn active">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="library-grid">
+                    <div class="library-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300?random=17" alt="Tech Favorites">
+                            <button class="play-button"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <h3>Tech Favorites</h3>
+                            <p>12 episodes • Playlist</p>
+                        </div>
+                    </div>
+
+                    <div class="library-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300?random=18" alt="Morning Shows">
+                            <button class="play-button"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <h3>Morning Shows</h3>
+                            <p>8 episodes • Playlist</p>
+                        </div>
+                    </div>
+
+                    <div class="library-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/300?random=19" alt="Best of 2023">
+                            <button class="play-button"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <h3>Best of 2023</h3>
+                            <p>15 episodes • Playlist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="library-list" style="display: none;">
+                    <div class="list-headers">
+                        <span>Title</span>
+                        <span>Date Added</span>
+                        <span>Duration</span>
+                    </div>
+                    <div class="list-items">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="now-playing">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

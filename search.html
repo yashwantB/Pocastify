@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Podcastify</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-podcast"></i>
+                <h2>Podcastify</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="active"><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                <li><a href="library.html"><i class="fas fa-bookmark"></i> Your Library</a></li>
+            </ul>
+
+            <div class="playlists-section">
+                <div class="playlist-header">
+                    <h3>Your Playlists</h3>
+                    <button class="create-playlist-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="playlist-grid">
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <header>
+                <div class="header-controls">
+                    <div class="nav-buttons">
+                        <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="What do you want to listen to?">
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <button class="profile-btn">
+                            <div class="profile-photo">
+                                <img src="https://picsum.photos/100" alt="Profile">
+                            </div>
+                            <span>Username</span>
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="search-categories">
+                <h2>Browse All</h2>
+                <div class="category-grid">
+                    <div class="category-card" style="background-color: #FF4632;">
+                        <h3>Technology</h3>
+                        <img src="https://picsum.photos/100?random=9" alt="Technology">
+                    </div>
+                    <div class="category-card" style="background-color: #1DB954;">
+                        <h3>Business</h3>
+                        <img src="https://picsum.photos/100?random=10" alt="Business">
+                    </div>
+                    <div class="category-card" style="background-color: #4B917D;">
+                        <h3>Education</h3>
+                        <img src="https://picsum.photos/100?random=11" alt="Education">
+                    </div>
+                    <div class="category-card" style="background-color: #E8115B;">
+                        <h3>Entertainment</h3>
+                        <img src="https://picsum.photos/100?random=12" alt="Entertainment">
+                    </div>
+                    <div class="category-card" style="background-color: #148A08;">
+                        <h3>Health</h3>
+                        <img src="https://picsum.photos/100?random=13" alt="Health">
+                    </div>
+                    <div class="category-card" style="background-color: #BC5900;">
+                        <h3>Science</h3>
+                        <img src="https://picsum.photos/100?random=14" alt="Science">
+                    </div>
+                    <div class="category-card" style="background-color: #7358FF;">
+                        <h3>Sports</h3>
+                        <img src="https://picsum.photos/100?random=15" alt="Sports">
+                    </div>
+                    <div class="category-card" style="background-color: #509BF5;">
+                        <h3>News</h3>
+                        <img src="https://picsum.photos/100?random=16" alt="News">
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-results" style="display: none;">
+                <h2>Top Results</h2>
+                <div class="results-grid">
+                </div>
+            </section>
+        </main>
+
+        <div class="now-playing">
+            <div class="current-track">
+                <div class="track-info">
+                    <img src="https://picsum.photos/60?random=8" alt="Current Episode">
+                    <div class="track-details">
+                        <h4>Current Episode Title</h4>
+                        <p>Show Name</p>
+                    </div>
+                    <button class="like-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="player-controls">
+                    <button class="shuffle-btn"><i class="fas fa-random"></i></button>
+                    <button class="prev-btn"><i class="fas fa-step-backward"></i></button>
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                    <button class="next-btn"><i class="fas fa-step-forward"></i></button>
+                    <button class="repeat-btn"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="player-timeline">
+                    <span class="current-time">0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="total-time">45:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
